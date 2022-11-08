@@ -1,0 +1,63 @@
+.ChatContent {
+    width: 40em;
+    height: 90vh;
+    background-color: white;
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: 5em calc(100% - 5em - 4em) 4em;
+    padding: 0em 2em;
+    --profil-size: 3.5em;
+}
+
+.ChatContent .content-title {
+    padding: 0.5em 0;
+    border-bottom: 1px solid var(--divider-color);
+    display: grid;
+    grid-template-columns: var(--profil-size) calc(100% - var(--profil-size));
+    grid-template-rows: auto auto;
+}
+
+.ChatContent .content-title img {
+    width: var(--profil-size);
+    border-radius: 50%;
+    grid-row: 1 /3;
+}
+
+.ChatContent .content-title span:nth-of-type(1) {
+    text-align: center;
+    font-size: large;
+}
+
+.ChatContent .content-title span:nth-of-type(2) {
+    text-align: center;
+    color: var(--divider-color);
+}
+
+.ChatContent .content-list {
+    max-height: 100%;
+    overflow-y: scroll;
+    padding: 2px 0;
+}
+
+.ChatContent .content-writer {
+    display: grid;
+    grid-template-columns: auto 2.5em;
+    gap: 1em;
+    padding: .7em 0;
+    border-top: 1px solid var(--divider-color);
+}
+
+.ChatContent .content-writer input {
+    background-color: var(--app-back-color);
+    border: 0;
+    border-radius: 10px;
+    padding: .3em 1em;
+    outline: none;
+}
+
+.ChatContent .content-writer button {
+    background-color: var(--primary-color);
+    color: white;
+    border: 0;
+    border-radius: 10px;
+}

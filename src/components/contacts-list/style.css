@@ -1,0 +1,46 @@
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    --profil-img-size: 3em;
+    background-color: white;
+    padding: 1em;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+
+.contact-list>h5 {
+    margin: 0;
+}
+
+.contact-list>div.contact {
+    border-bottom: .5px solid var(--divider-color);
+    padding: .5em 0em;
+    display: grid;
+    justify-content: flex-start;
+    align-items: center;
+    grid-template-columns: var(--profil-img-size) auto;
+    grid-template-rows: repeat(calc(var(--profil-img-size) / 2), 2);
+    column-gap: 1em;
+}
+
+.contact-list>div.contact:last-child {
+    border-bottom: 0;
+}
+
+.contact-list>div.contact img {
+    border-radius: 50%;
+    width: var(--profil-img-size);
+    height: var(--profil-img-size);
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+.contact-list>div.contact span:nth-of-type(1) {
+    font-weight: 600;
+}
+
+.contact-list>div.contact span:nth-of-type(2) {
+    font-weight: 300;
+    color: var(--secondary-text-color);
+}

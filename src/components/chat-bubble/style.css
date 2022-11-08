@@ -1,0 +1,55 @@
+.chat-bubble {
+    width: 50%;
+    position: relative;
+    display: grid;
+    margin: 1em 0;
+}
+
+.chat-bubble .dialogue {
+    padding: 5px;
+}
+
+.chat-bubble .dialogue-queue {
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    border-bottom: 0 solid transparent;
+    border-top: .7em solid transparent;
+}
+
+/* left bubble */
+.chat-bubble.left {
+    grid-template-columns: .7em calc(100% - .7em);
+}
+
+.chat-bubble.left .dialogue {
+    background-color: var(--divider-color);
+    grid-column: 2;
+    border-radius: 4px 4px 4px 0;
+}
+
+.chat-bubble.left .dialogue-queue {
+    border-right: .7em solid var(--divider-color);
+    border-left: 0 solid transparent;
+    grid-column: 1;
+}
+
+/* right bubble */
+.chat-bubble.right {
+    grid-template-columns: calc(100% - .7em) .7em;
+    color: white;
+    margin-left: auto;
+}
+
+.chat-bubble.right .dialogue {
+    background-color: var(--primary-color);
+    grid-column: 1;
+    border-radius: 4px 4px 0px 4px;
+}
+
+.chat-bubble.right .dialogue-queue {
+    border-left: .7em solid var(--primary-color);
+    border-right: 0 solid transparent;
+    grid-column: 2;
+}

@@ -1,0 +1,8 @@
+.repertoire {
+    display: grid;
+    grid-template-rows: 3em calc(100% - 3em);
+    align-items: flex-start;
+    row-gap: 2em;
+    width: 24em;
+    height: 90vh;
+}

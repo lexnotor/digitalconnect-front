@@ -1,0 +1,10 @@
+.wrapp-chat-pages {
+    display: grid;
+    grid-template-columns: 11em auto;
+    min-height: 90vh;
+    gap: 2em;
+}
+
+.wrapp-chat-pages> :first-child {
+    grid-column: 1;
+}

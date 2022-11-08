@@ -1,0 +1,29 @@
+/* 
+    100% => taille totale
+    3em => 1.5em + 1.5em
+    1em => padding 0.5em x2
+    1.2em => input padding
+ */
+.search-bar {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.5em calc(100% - 3em) 1.5em;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 4px var(--divider-color);
+    padding: .5em;
+    box-sizing: border-box;
+}
+
+.search-bar input {
+    padding: .3em .6em;
+    border: 0;
+    outline: none;
+}
+
+.search-bar button {
+    border: 0;
+    background-color: transparent;
+}

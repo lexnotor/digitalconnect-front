@@ -1,0 +1,18 @@
+.sidebar-chat {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 3em auto 3em;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    padding: 2em 0em;
+    box-sizing: border-box;
+}
+
+.sidebar-chat .user-profil {
+    text-align: center;
+}
+
+.sidebar-chat .user-profil img {
+    width: 6em;
+    border-radius: 50%;
+}
