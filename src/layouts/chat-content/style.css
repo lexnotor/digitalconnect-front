@@ -39,6 +39,10 @@
     padding: 2px 0;
 }
 
+.please-select-chat {
+    text-align: center;
+}
+
 .ChatContent .content-writer {
     display: grid;
     grid-template-columns: auto 2.5em;

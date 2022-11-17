@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LoginPage = () => {
+const LoginPage = ({ appUuid }) => {
     const style = {
         width: '100%',
         height: '400px',
@@ -8,7 +8,7 @@ const LoginPage = () => {
     }
     return (
         <div>
-            <iframe src={import.meta.env.VITE_BACKEND_LOGIN + '?uid=23'} style={style}></iframe>
+            <iframe src={`http://${window.location.hostname}:3500/login?uid=${appUuid}`} style={style}></iframe>
         </div>
     )
 }
