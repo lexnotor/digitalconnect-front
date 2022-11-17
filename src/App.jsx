@@ -21,7 +21,7 @@ function App() {
         dispatch(setIsLogin(true));
     });
     useEffect(() => {
-        setTimeout(() => dispatch(getMyInfo(), 1000))
+        setTimeout(() => dispatch(getMyInfo(appUuid), 1000))
     }, [account])
     useEffect(() => {
         if (account) {

@@ -52,7 +52,7 @@
 }
 
 .ChatContent .content-writer input {
-    background-color: var(--app-back-color);
+    background-color: var(--divider-color);
     border: 0;
     border-radius: 10px;
     padding: .3em 1em;

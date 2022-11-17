@@ -1,13 +1,13 @@
 :root {
-    --primary-color: #159A9C;
+    --primary-color: #9c95c1;
     --dark-primary-color: #002333;
     --light-primary-color: #DEEFE7;
     --accent-color: #B4BEC9;
     --back-color: #FFF;
     --primary-text-color: #3A3838;
     --secondary-text-color: #757575;
-    --divider-color: #BDBDBD;
-    --app-back-color: #EFEFEF;
+    --divider-color: #e7e7e7;
+    --app-back-color: #575776;
     --delete-color: #DF3C4F;
 }
 

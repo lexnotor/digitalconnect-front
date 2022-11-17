@@ -34,9 +34,9 @@ export const getChats = () => {
     }
 }
 
-export const getMyInfo = () => {
+export const getMyInfo = (appUuid) => {
     return dispatch => {
-        fetch(`http://${window.location.hostname}:3500/api/v1/users/me`, {
+        fetch(`http://${window.location.hostname}:3500/api/v1/users/me?uid=${appUuid}`, {
             method: 'GET',
             mode: 'cors',
             credentials: 'include',

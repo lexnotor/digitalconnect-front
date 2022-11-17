@@ -14,7 +14,7 @@ export const user_slice = createSlice({
     initialState: [],
     reducers: {
         addUser: (state, action) => {
-            if ((!0 in action.payload)) return state;
+            if (!(0 in action.payload)) return state;
             action.payload.forEach(elm => {
                 (!state.find(user => user._id === elm._id)) && state.push(elm)
             })
