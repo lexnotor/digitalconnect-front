@@ -14,6 +14,7 @@ export const user_slice = createSlice({
     initialState: [],
     reducers: {
         addUser: (state, action) => {
+            if ((!0 in action.payload)) return state;
             action.payload.forEach(elm => {
                 (!state.find(user => user._id === elm._id)) && state.push(elm)
             })
@@ -82,8 +83,9 @@ export const chat_slice = createSlice({
             // action.payload.forEach(elm => {
             //     (!state.find(chat => chat.id === elm._id)) && state.push(elm)
             // })
+            if (!(0 in action.payload)) return state
             state = [...action.payload]
-            state.sort((a, b) => new Date(a.latest).getTime() - new Date(b.latest).getTime())
+            state.sort((a, b) => new Date(b.latest).getTime() - new Date(a.latest).getTime())
 
             return state
         },
