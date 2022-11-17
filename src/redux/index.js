@@ -81,6 +81,18 @@ export const sendMessage = (text, to) => {
     }
 }
 
+export const logoutUser = () => {
+    return dispatch => {
+        fetch(`http://${window.location.hostname}:3500/api/v1/connect/logout`, {
+            mode: 'cors',
+            method: 'POST',
+            credentials: 'include'
+        })
+            .then(data => dispatch(setIsLogin(false)))
+            .catch(err => console.log("Erreur lors de la deconnexion"))
+    }
+}
+
 export const store = configureStore({
     reducer: {
         'chats': slices.chat_slice.reducer,

@@ -16,3 +16,18 @@
     width: 6em;
     border-radius: 50%;
 }
+
+.sidebar-chat .user-logout {
+    text-align: center;
+    font-size: 3em;
+    color: rgb(52, 52, 52);
+    transition: 0.5s;
+}
+
+.sidebar-chat .user-logout:hover {
+    color: brown;
+}
+
+.sidebar-chat .user-logout span {
+    cursor: pointer;
+}
