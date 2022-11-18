@@ -88,7 +88,7 @@ export const logoutUser = () => {
             method: 'POST',
             credentials: 'include'
         })
-            .then(data => dispatch(setIsLogin(false)))
+            .then(data => dispatch(setIsLogin(false)) && window.location.reload())
             .catch(err => console.log("Erreur lors de la deconnexion"))
     }
 }
