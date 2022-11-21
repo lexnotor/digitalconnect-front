@@ -45,7 +45,7 @@
 
 .ChatContent .content-writer {
     display: grid;
-    grid-template-columns: auto 2.5em;
+    grid-template-columns: auto 2.5em 2.5em;
     gap: 1em;
     padding: .7em 0;
     border-top: 1px solid var(--divider-color);
@@ -64,4 +64,9 @@
     color: white;
     border: 0;
     border-radius: 10px;
+    font-size: 1.5em;
+}
+
+.ChatContent .content-writer button>* {
+    vertical-align: top;
 }

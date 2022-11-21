@@ -6,6 +6,7 @@ import './style.css'
 import { useEffect } from 'react'
 import uuid from 'react-uuid'
 import { useState } from 'react'
+import { ImImage } from 'react-icons/im'
 
 const ContactList = () => {
     const [userDialogue, setUserDialogue] = useState([])
@@ -38,13 +39,20 @@ const ContactList = () => {
             <div className='contact' key={uuid()} onClick={e => selectConversation(c, chatter)}>
                 <img src={avatar} alt="Raghav-profil" />
                 <span>{chatter[0].username}</span>
-                <span>{c.messages[c.messages.length - 1].content}</span>
+
+                <span>
+                    {
+                        c.messages[c.messages.length - 1].genre == 'text' ?
+                            c.messages[c.messages.length - 1].content.slice(0, 20) + '...' :
+                            <ImImage />
+                    }
+                </span>
             </div>
         )
     });
+    liste.push(<h5>New Chat</h5>)
     users.forEach((u) => {
         const isUserInConversation = userDialogue.indexOf(u._id) != -1;
-
         if (!isUserInConversation) {
             liste.push(
                 <div

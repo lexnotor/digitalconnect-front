@@ -67,7 +67,6 @@ export const getAllUser = () => {
 
 export const sendMessage = (text, to) => {
     if (!text.trim().length || !to) return () => { };
-    console.log(text, to);
     return dispatch => {
         fetch(`http://${window.location.hostname}:3500/api/v1/chats/user/send`, {
             mode: 'cors',
@@ -78,6 +77,21 @@ export const sendMessage = (text, to) => {
             .then(data => data.json())
             .then(data => dispatch(getChats()))
             .catch(err => console.log("Erreur lors de l'envoi de message"))
+    }
+}
+export const sendImage = (formData) => {
+    console.log(formData);
+    return dispatch => {
+        fetch(`http://${window.location.hostname}:3500/api/v1/chats/user/send`, {
+            mode: 'cors',
+            method: 'POST',
+            credentials: 'include',
+            body: formData
+        })
+            .then(data => data.json())
+            .then(data => console.log(data))
+            .then(data => dispatch(getChats()))
+            .catch(err => console.log("Erreur lors de l'envoi de l'image"))
     }
 }
 

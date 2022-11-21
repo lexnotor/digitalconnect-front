@@ -1,5 +1,6 @@
 .chat-bubble {
-    width: 50%;
+    width: fit-content;
+    max-width: 50%;
     position: relative;
     display: grid;
     margin: 1em 0;
@@ -29,6 +30,10 @@
     border-radius: 4px 4px 4px 0;
 }
 
+.chat-bubble.left .dialogue.trans {
+    background-color: transparent;
+}
+
 .chat-bubble.left .dialogue-queue {
     border-right: .7em solid var(--divider-color);
     border-left: 0 solid transparent;
@@ -46,6 +51,10 @@
     background-color: var(--primary-color);
     grid-column: 1;
     border-radius: 4px 4px 0px 4px;
+}
+
+.chat-bubble.right .dialogue.trans {
+    background-color: transparent;
 }
 
 .chat-bubble.right .dialogue-queue {

@@ -1,10 +1,12 @@
 import React from 'react'
 import './style.css'
 
-const ChatBubble = ({ children, right = false }) => {
+const ChatBubble = ({ children, right = false, genre }) => {
+    let content = children;
+    if (genre == 'image') content = <img src={children} alt="Image" />;
     return (
         <div className={'chat-bubble ' + (right ? 'right' : 'left')}>
-            <div className='dialogue'>{children}</div>
+            <div className={'dialogue' + (genre == 'image' ? 'trans' : '')}>{content}</div>
             <div className='dialogue-queue'></div>
         </div>
     )
