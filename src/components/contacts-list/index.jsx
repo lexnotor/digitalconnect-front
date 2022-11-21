@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getChats, getAllUser, setToDisplay } from '../../redux'
-import avatar from '../../assets/images/avatar.png'
+import avatar from '../../assets/images/defaul_pic.svg'
 import './style.css'
 import { useEffect } from 'react'
 import uuid from 'react-uuid'
@@ -37,7 +37,7 @@ const ContactList = () => {
             setUserDialogue(d => [...d, chatter[0]._id]);
         liste.push(
             <div className='contact' key={uuid()} onClick={e => selectConversation(c, chatter)}>
-                <img src={avatar} alt="Raghav-profil" />
+                <img src={chatter[0].image ? chatter[0].image : avatar} alt="Raghav-profil" />
                 <span>{chatter[0].username}</span>
 
                 <span>
@@ -50,7 +50,7 @@ const ContactList = () => {
             </div>
         )
     });
-    liste.push(<h5>New Chat</h5>)
+    liste.push(<h5 key={uuid()}>New Chat</h5>)
     users.forEach((u) => {
         const isUserInConversation = userDialogue.indexOf(u._id) != -1;
         if (!isUserInConversation) {
@@ -60,7 +60,7 @@ const ContactList = () => {
                     key={uuid()}
                     onClick={e => selectConversation({ newer: true, }, [u])}
                 >
-                    <img src={avatar} alt="Raghav-profil" />
+                    <img src={u.image ? u.image : avatar} alt="Raghav-profil" />
                     <span>{u.username}</span>
                     <span></span>
                 </div>

@@ -1,7 +1,7 @@
 .sidebar-chat {
     height: 100%;
     display: grid;
-    grid-template-rows: 3em auto 3em;
+    grid-template-rows: 8em auto 3em;
     background-color: var(--primary-color);
     border-radius: 5px;
     padding: 2em 0em;
@@ -10,11 +10,29 @@
 
 .sidebar-chat .user-profil {
     text-align: center;
+    height: fit-content;
 }
 
 .sidebar-chat .user-profil img {
     width: 6em;
+    height: 6em;
     border-radius: 50%;
+    object-fit: cover;
+}
+
+.sidebar-chat .main-menu {
+    color: white;
+    font-size: 3em;
+    text-align: center;
+}
+
+.sidebar-chat .main-menu a {
+    color: white;
+    transition: .5s;
+}
+
+.sidebar-chat .main-menu a:hover {
+    color: var(--accent-color);
 }
 
 .sidebar-chat .user-logout {

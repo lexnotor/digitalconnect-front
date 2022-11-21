@@ -1,0 +1,10 @@
+.UserProfil {
+    width: 40em;
+    height: 90vh;
+    background-color: white;
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: 5em calc(100% - 5em - 4em) 4em;
+    padding: 0em 2em;
+    --profil-size: 3.5em;
+}

@@ -19,6 +19,10 @@
     border-top: .7em solid transparent;
 }
 
+.chat-bubble img {
+    max-width: 100%;
+}
+
 /* left bubble */
 .chat-bubble.left {
     grid-template-columns: .7em calc(100% - .7em);

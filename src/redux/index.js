@@ -35,8 +35,9 @@ export const getChats = () => {
 }
 
 export const getMyInfo = (appUuid) => {
+    const query = appUuid ? '?uid=${appUuid}' : '';
     return dispatch => {
-        fetch(`http://${window.location.hostname}:3500/api/v1/users/me?uid=${appUuid}`, {
+        fetch(`http://${window.location.hostname}:3500/api/v1/users/me${query}`, {
             method: 'GET',
             mode: 'cors',
             credentials: 'include',
@@ -80,7 +81,6 @@ export const sendMessage = (text, to) => {
     }
 }
 export const sendImage = (formData) => {
-    console.log(formData);
     return dispatch => {
         fetch(`http://${window.location.hostname}:3500/api/v1/chats/user/send`, {
             mode: 'cors',
@@ -89,11 +89,25 @@ export const sendImage = (formData) => {
             body: formData
         })
             .then(data => data.json())
-            .then(data => console.log(data))
             .then(data => dispatch(getChats()))
             .catch(err => console.log("Erreur lors de l'envoi de l'image"))
     }
 }
+
+export const uploadPicture = (formData) => {
+    return dispatch => {
+        fetch(`http://${window.location.hostname}:3500/api/v1/users/profile/image`, {
+            mode: 'cors',
+            method: 'POST',
+            credentials: 'include',
+            body: formData
+        })
+            .then(data => data.json())
+            .then(data => dispatch(getMyInfo()))
+            .catch(err => console.log("Erreur lors de l'envoi de l'image"))
+    }
+}
+
 
 export const logoutUser = () => {
     return dispatch => {
